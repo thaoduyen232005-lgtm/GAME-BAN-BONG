@@ -33,7 +33,7 @@ def get_same_color_group(row, col, grid, grid_offset_state):
     visited = {(row, col)}
     while queue:
         r, c = queue.popleft()
-        for dr, dc in get_neighbors(r, c, grid_offset_state):
+        for dr, dc in get_neighbors(c, r, grid_offset_state):
             nr, nc = r + dr, c + dc
             if 0 <= nr < ROWS and 0 <= nc < COLS and grid[nr][nc]:
                 if grid[nr][nc].color_id == color_id and (nr, nc) not in visited:
@@ -71,4 +71,5 @@ def shift_grid_down(grid, grid_offset_state, Egg, bubble_imgs, FallingEgg, falli
             gx, gy = get_pos(0, c, new_offset)
             grid[0][c] = Egg(gx, gy, random.randint(0, 5), bubble_imgs)
     handle_floating(grid, falling_bubbles, FallingEgg, new_offset)
+
     return new_offset
