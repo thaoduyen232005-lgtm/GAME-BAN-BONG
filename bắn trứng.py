@@ -31,7 +31,7 @@ ROWS = 22
 SCORE_FONT = pygame.font.SysFont("Arial", 36, bold=True)
 HISTORY_FONT = pygame.font.SysFont("Consolas", 22)
 
-DATA_PATH = r"D:\python\data"
+DATA_PATH = os.path.join(os.path.dirname(__file__), "data")
 
 level_config = {
     1: {"drop_time": 20000, "show_guide": True},
@@ -445,4 +445,5 @@ while running:
 
     pygame.display.flip()
 pygame.quit()
+
 
