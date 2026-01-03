@@ -360,7 +360,6 @@ while running:
         draw_button(screen, btn_start_img, btn_start_rect, mouse_pos)
         draw_button(screen, btn_help_img, btn_help_rect, mouse_pos)
         draw_button(screen, btn_history_img, btn_history_rect, mouse_pos)
-        if snd_pop: snd_pop.play()
     elif game_state == 4:
         screen.blit(bg_help, (0, 0))
         draw_button(screen, btn_home_img, btn_home_any_rect, mouse_pos)
@@ -445,5 +444,6 @@ while running:
 
     pygame.display.flip()
 pygame.quit()
+
 
 
